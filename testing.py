@@ -18,7 +18,7 @@ class TestColdbrewHostingServer(unittest.TestCase):
         self.assertGreater(len(token), 60)
 
     def test_agssite_file(self):
-        testing_file = os.path.join(os.path.dirname(__file__), 'test.agssite')
+        testing_file = os.path.join(os.path.dirname(__file__), 'resources', 'test.agssite')
         if os.path.exists(testing_file):
             os.remove(testing_file)
         server = backup.Server(
