@@ -1,8 +1,9 @@
 # import modules
 import requests
+import boto3
 
 
-class Server(object):
+class ArcgisServer(object):
     """
     Server object to embody tasks needed to accomplish with a server.
     """
@@ -87,4 +88,4 @@ class Server(object):
             for block in response.iter_content(1024):
                 handle.write(block)
 
-        return response_json
+        return path_to_save_file

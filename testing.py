@@ -9,7 +9,7 @@ settings = json.load(open('./resources/settings.json'))
 class TestColdbrewHostingServer(unittest.TestCase):
 
     def test_initialization_token(self):
-        server = backup.Server(
+        server = backup.ArcgisServer(
             url=settings['url'],
             username=settings['username'],
             password=settings['password']
@@ -21,7 +21,7 @@ class TestColdbrewHostingServer(unittest.TestCase):
         testing_file = os.path.join(os.path.dirname(__file__), 'resources', 'test.agssite')
         if os.path.exists(testing_file):
             os.remove(testing_file)
-        server = backup.Server(
+        server = backup.ArcgisServer(
             url=settings['url'],
             username=settings['username'],
             password=settings['password']
